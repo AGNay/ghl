@@ -7,7 +7,7 @@ Firmware_Diy_Core() {
 	Author=AUTO
 	Author_URL=AUTO
 	Default_IP="192.168.1.1"
-	Banner_Message="Powered by AutoBuild-Actions"
+	Banner_Message="Powered by Zau"
 
 	Short_Firmware_Date=true
 	Checkout_Virtual_Images=false
