@@ -47,6 +47,12 @@ env:
   DELETE_OLD_WORKFLOW: true
 ### 结束
 
+# cd openwrt/package
+       # git clone https://github.com/kenzok8/small-package
+       # git clone https://github.com/kenzok8/small.git
+       # cd ..
+       # ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt 
+       
 jobs:
   Compile:
     runs-on: ubuntu-latest
@@ -117,11 +123,6 @@ jobs:
       run: |
         git clone -b $REPO_BRANCH $REPO_URL openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-       # cd openwrt/package
-       # git clone https://github.com/kenzok8/small-package
-       # git clone https://github.com/kenzok8/small.git
-       # cd ..
-       # ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt 
         cd openwrt    
         ./scripts/feeds update -a
         ./scripts/feeds install -a
