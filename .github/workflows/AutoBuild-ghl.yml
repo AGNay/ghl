@@ -34,7 +34,7 @@ env:
 # 编译时调用的 [.config] 文件名称
   CONFIG_FILE: ghl
 # 源码仓库:分支
-  DEFAULT_SOURCE: coolsnowwolf/lede:master
+  DEFAULT_SOURCE: lienol/openwrt:main
 # 上传固件到 Github Releases
   UPLOAD_RELEASES: true
 # 上传固件到 Github Artifacts
@@ -117,11 +117,12 @@ jobs:
       run: |
         git clone -b $REPO_BRANCH $REPO_URL openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-        cd openwrt/package
-        git clone https://github.com/kenzok8/small-package
-        git clone https://github.com/kenzok8/small.git
-        cd ..
-        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt     
+       # cd openwrt/package
+       # git clone https://github.com/kenzok8/small-package
+       # git clone https://github.com/kenzok8/small.git
+       # cd ..
+       # ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt 
+        cd openwrt    
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
