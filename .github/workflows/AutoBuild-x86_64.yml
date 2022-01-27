@@ -118,6 +118,7 @@ jobs:
         git clone -b $REPO_BRANCH $REPO_URL openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         cd openwrt
+        git clone https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
